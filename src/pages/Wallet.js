@@ -1,12 +1,16 @@
 import React from 'react';
+import Header from '../Components/Header';
 
 class Wallet extends React.Component {
   render() {
     return (
-      <div>
-        <span>TrybeWallet</span>
-        <h1>EStou na carteira</h1>
-      </div>);
+      <>
+        <Header />
+        <section>
+          <h1>Aqui é a carteira</h1>
+          <span>TrybeWallet</span>
+        </section>
+      </>);
   }
 }
 
