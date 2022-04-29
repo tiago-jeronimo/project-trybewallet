@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { actionWallet } from '../actions';
 import Header from '../Components/Header';
+import Table from '../Components/Table';
 import { currency } from '../services/api';
 
 class Wallet extends React.Component {
@@ -19,7 +20,7 @@ class Wallet extends React.Component {
         <Header />
         <section>
           <h1>Aqui é a carteira</h1>
-          <span>TrybeWallet</span>
+          <Table />
         </section>
       </>);
   }

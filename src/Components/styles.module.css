@@ -15,3 +15,15 @@
   justify-content: space-between;
   margin-right: 30px;
 }
+
+
+table , th , td {
+  border: 1px solid black;
+}
+
+.cssTabela {
+  margin: auto;
+  text-align: center;
+  width: 95%;
+}
+
