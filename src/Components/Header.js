@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 
 class Header extends React.Component {
   render() {
-    const { emailState } = this.props;
+    const { emailState, despesas } = this.props;
     return (
       <div>
         <fieldset className={ styles.container }>
@@ -22,7 +22,11 @@ class Header extends React.Component {
             </div>
             <div className={ styles.filho }>
               <p data-testid="total-field">
-                Campo total - 0
+                { despesas.length > 0
+                  ? despesas.map((e) => Number(e.value)
+                * Number(e.exchangeRates[e.currency].ask))
+                    .reduce((acc, elem) => acc + elem).toFixed(2)
+                  : 0}
               </p>
             </div>
             <div className={ styles.filho }>
@@ -38,11 +42,14 @@ class Header extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    emailState: state.user.email };
+    emailState: state.user.email,
+    despesas: state.wallet.expenses,
+  };
 }
 
 Header.propTypes = {
   emailState: PropTypes.string.isRequired,
+  despesas: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default connect(mapStateToProps)(Header);

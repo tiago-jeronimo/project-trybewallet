@@ -1,5 +1,6 @@
 export const SAVE_USER = 'SAVE_USER';
 export const SAVE_WALLET = 'SAVE_WALLET';
+export const SAVE_EXPENSES = 'SAVE_EXPENSE';
 
 export const actionUser = (email) => ({
   type: SAVE_USER,
@@ -9,4 +10,10 @@ export const actionUser = (email) => ({
 export const actionWallet = (info) => ({
   type: SAVE_WALLET,
   info,
+});
+
+export const expenses = (infos, cotação) => ({
+  type: SAVE_EXPENSES,
+  infos,
+  cotação,
 });
